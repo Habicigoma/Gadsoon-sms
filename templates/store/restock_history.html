@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<section class="container mt-5">
+
+            <p class="display-6 fw-bold" align="center">
+              " THIS IS  THE HISTORY OF THE RECEIVING ITEMS "
+            </p>
+</section>
+
+<div class="text-bg-primary p-3">
+<div class="p-3 mb-2 bg-warning text-dark">
+
+<div class="card mx-auto" style="width: 76rem;">
+
+  <div class="card-body">
+    <h5 class="card-title mb-3">Receive History </h5>
+
+    <div class="p-3 mb-2 bg-success text-white">
+
+    <table class="table table-bordered table-primary">
+      <thead>
+        <tr class="table-danger">
+          <th scope="col">Item Name</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Comments</th>
+          <th scope="col">Receive date</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for item in items %}
+          <tr>
+            <td>{{item.item}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.comment_more}}</td>
+            <td>{{item.timestamp}}</td>
+          <!--  <td><span class="badge bg-primary">Primary</span></td>-->
+          {% endfor %}
+
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+
+ {% include 'store/pagination.html' with page=items %}
+
+{% endblock content %}

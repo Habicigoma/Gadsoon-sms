@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="card mx-auto" style="width: 40rem;">
+      <div class="card-body">
+        <h5 class="card-title mb-3">Add an Item</h5>
+
+           <form method='POST' action=''>{% csrf_token %}
+        <h1>Are you sure you want to delete</h1>
+        {{form}}
+        <input class="btn btn-danger" type="submit" value="Yes"/>
+        <a href="store/all_items"><div class="btn btn-primary">Cancel</div></a>
+    </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock content %}
+
+

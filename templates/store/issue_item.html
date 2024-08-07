@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<div class="p-3 mb-2 bg-success-subtle text-success-emphasis">
+  <div class="text-bg-primary p-3">
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="card mx-auto" style="width: 40rem;">
+      <div class="card-body">
+        <h5 class="card-title mb-3">Issue an Item</h5>
+
+        <form method="POST">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Item name</label>
+            {% render_field form.item class="form-control" %}
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Issued quantity</label>
+            {% render_field form.issued_quantity class="form-control" %}
+          </div>
+
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Issued To</label>
+            {% render_field form.issued_to class="form-control" %}
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Department</label>
+            {% render_field form.department class="form-control" %}
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Issued Date</label>
+            {% render_field form.return_date type="date" class="form-control" %}
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Comments</label>
+            {% render_field form.comment_more  class="form-control" %}
+          </div>
+
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+
+{% endblock content %}
